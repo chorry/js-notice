@@ -1,0 +1,4 @@
+Examples:
+var notes = $.fn.stickyNote();
+var loadingNoteId = notes.create({noteContent:"Request failed: " + textStatus, className:'alert-error', extended: true});
+    notes.destroy(loadingNoteId);
