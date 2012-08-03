@@ -4,7 +4,7 @@
 
 (function ($) {
     $.fn.stickyNote = function (o) {
-        console.log('sticky init ok');
+        //console.log('sticky init ok');
         var id = 0;
         var stickyNoteDiv = $('#jqnotice');
         var stickyNoteIdName = 'noteStickerId_';
@@ -41,7 +41,7 @@
                 stickItem.attr('id', stickyNoteIdName + id);
                 stickItem.html(stick.noteContent);
 
-                console.log('creating sticker #'+id);
+                //console.log('creating sticker #'+id);
 
                 if (stick.extended)
                 {
