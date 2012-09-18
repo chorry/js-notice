@@ -4,7 +4,7 @@
 
 (function ($) {
     $.fn.stickyNote = function (o) {
-        //console.log('sticky init ok');
+        console.log('sticky init ok');
         var id = 0;
         var stickyNoteDiv = $('#jqnotice');
         var stickyNoteIdName = 'noteStickerId_';
@@ -27,21 +27,23 @@
 
                 if (noteType == 'error') stick.className="alert-error";
                 id += 1;
+                console.log('++++++++');
+                console.debug(stickyNoteDiv);
+                console.debug(($('#jqnotice')));
+                console.log('----');
                 //init storage div, if not exists
-                if (!stickyNoteDiv.length) {
+                if (!$(stickyNoteDiv).length) {
                     $('body').append('<div id="jqnotice"></div>');
-                    var stickers = $('#jqnotice');
+                    stickyNoteDiv = $('#jqnotice');
                 }
 
                 //create sticker itself
-                stickers.css('position', 'fixed').css({right:'auto', left:'auto', top:'auto', bottom:'auto'}).css(stick.position);
+                stickyNoteDiv.css('position', 'fixed').css({right:'auto', left:'auto', top:'auto', bottom:'auto'}).css(stick.position);
                 var stickItem = $('<div class="alert"></div>');
-                stickers.append(stickItem);
+                stickyNoteDiv.append(stickItem);
                 if (stick.className) stickItem.addClass(stick.className);
                 stickItem.attr('id', stickyNoteIdName + id);
                 stickItem.html(stick.noteContent);
-
-                //console.log('creating sticker #'+id);
 
                 if (stick.extended)
                 {
