@@ -29,7 +29,7 @@
                 id += 1;
                 //init storage div, if not exists
                 if (!stickyNoteDiv.length) {
-                    $('#navbar').append('<div id="jqnotice"></div>');
+                    $('body').append('<div id="jqnotice"></div>');
                     var stickers = $('#jqnotice');
                 }
 
